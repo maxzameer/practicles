@@ -41,10 +41,12 @@ def signin():
         if password == user.password:
             return render_template("user.html",message ="login success")
         else:
-            return render_template("user.html",message = "you have entered a wrong password")
+            return render_template("user.html",message = """you have 
+                                   entered a wrong password""")
     
     else:
-        return render_template("user.html",message ="please enter a valid email address") 
+        return render_template("user.html",message ="""please
+                               enter a valid email address""") 
         
 
 
