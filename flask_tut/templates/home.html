@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>home page</title>
+    </head>
+
+    <body>
+
+        {%with message = get_flashed_messages()%}
+            {%if message%}
+                {%for i in message%}
+                    <h1>{{i}}</h1>
+                {% endfor %}
+            {%endif%}   
+        {% endwith %}         
+
+
+
+        <form action = "#" method= "post" enctype="multipart/form-data">
+            <input type="file" name= "file" >
+            <input type="submit" value= "upload" >
+            
+        </form>
+        
+        {%if show%}
+             <image width = "200" src= {{image}}>
+        {% endif %}        
+
+    </body>
+
+</html>

@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>home page</title>
+    </head>
+    <body>
+        <style>
+            table, th, td {
+              border:1px solid black;
+            }
+        </style>
+        
+        <h1>Student Table</h1>
+        <table style="width:100%">
+           
+            <tr>
+                
+                <th>Name</th>
+                <th>Roll Number</th>
+                <th>Subject</th>                
+                <th>Contact</th>
+            </tr>
+
+            {%for i in data%}
+                <tr>
+                    
+                    <td>{{i.name}}</td>
+                    <td>{{i.roll}}</td>
+                    <td>{{i.subject}}</td>                    
+                    <td>{{i.contact}}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+
+
+
+
+    </body>
+
+</html>

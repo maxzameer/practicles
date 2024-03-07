@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>table page</title>
+    </head>
+
+    <body>
+
+        <div>
+            <h1>Table</h1>
+            {%with messages = get_flashed_messages()%}
+                {%if messages%}
+                    {%for i in messages%}
+                        <h1>ggggggggg</h1>   
+                    {%endfor %}
+                {% endif %}  
+            {% endwith %}  
+            <br> 
+
+            {{ table_html | safe }}
+
+
+        </div>
+
+
+
+    </body>
+
+</html>
