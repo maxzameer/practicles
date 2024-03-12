@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <title>ajex</title>
+    </head>
+
+    <body>
+        <h1>form</h1>
+
+        <form action= "/home/" method ="post" id = "formId">
+            {% csrf_token %}               
+            <label>
+                Username:
+                <input type= "text" name = "user" id = "userId" >
+            
+            </label>
+            <br>
+
+            <label>
+                Password:
+                <input type= "text" name = "password" id = "userPassword" >
+            </label>
+            <br>
+
+            <label>
+                <input type= "submit" value = "log in">
+            </label>
+            <br>
+            
+
+
+             
+
+        </form>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" 
+         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+         crossorigin="anonymous">
+        </script>
+
+        <script>
+            $(document).on("submit","#formId",function(e){
+                e.preventDefault();
+                let user = $("#userId").val();
+                let password = $("#userPassword").val(); 
+
+                $.ajax({
+                    type : "POST",
+                    url : "/home/",
+                    data : {
+                        user  : user,
+                        password : password,
+                        csrfmiddlewaretoken : $('input[name = csrfmiddlewaretoken]').val()
+
+                    }
+
+                })
+
+            })
+
+        </script>
+
+       
+
+    </body>
+
+</html>
