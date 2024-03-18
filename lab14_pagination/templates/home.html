@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>home page</title>
+    </head>
+
+    <body>
+
+        {%for i in data%}
+          <h1>{{i.name}}</h1>
+        {% endfor %} 
+
+
+
+        <table>
+            <tr>
+                <th>
+                    {%for i in range(data.pages)%}
+                    
+                        
+                        <a href="{{i+1}}">{{i+1}}</a>
+                        
+                    
+                    
+                    {%endfor%} 
+                </th>    
+
+            </tr> 
+        </table>      
+
+     
+    
+
+
+    </body>
+
+</html>

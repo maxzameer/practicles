@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>signup</title>
+    </head>
+
+    <body>
+        <h1>signup</h1>
+        <form action= "/signup" method ="post">
+
+                {% csrf_token %}
+                {{form}}
+                <br>     
+            
+
+            
+                <input type= "submit" value = "Sign UP">
+            
+            <br>
+        </form>
+    </body>
+</html>

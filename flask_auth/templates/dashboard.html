@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Dashboard</title>
+   
+</head>
+<body>
+    <div >
+        
+        <h1>Dashboard</h1>
+
+        {%with m = get_flashed_messages()%}
+            {% if m %}
+             {% for i in m%}
+                <h1>{{i}}</h1>
+             {% endfor %}  
+
+            {% endif %}
+        {% endwith %}
+
+        
+        <div >
+            <p>Welcome, {{ user.username }}!</p>
+            
+        </div>
+
+
+        <form action="{{ url_for('logout') }}" >
+            <div >
+                <input type="submit" value= "Logout">
+            </div>
+        </form>
+
+    </div>
+   
+</body>
+</html>

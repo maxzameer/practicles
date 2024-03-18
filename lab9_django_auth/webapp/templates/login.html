@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>login</title>
+    </head>
+
+    <body>
+
+        <h1>login</h1>
+
+        <form action= "/login" method ="post">
+            {% csrf_token %}
+
+    
+            <label>
+                User Name:
+                <input type= "text" name = "username">
+            </label>
+            <br>
+
+            <label>
+                Password:
+                <input type= "text" name = "password">
+            </label>
+            <br>
+
+            <label>
+                <input type= "submit" value = "log in">
+            </label>
+            <br>
+
+            <h1>{{error}}</h1> 
+
+
+
+
+        </form>
+
+
+    </body>
+
+</html>
