@@ -91,6 +91,8 @@ def update(name):
 def delete(name):
     collection.delete_one({"name": name})    
     return jsonify({"message": "Student deleted successfully"}), 200
+
+#
     
     
     
