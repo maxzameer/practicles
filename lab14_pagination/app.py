@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request
 from flask_sqlalchemy import SQLAlchemy
+
 from faker import Faker
 
 app = Flask(__name__)
@@ -20,6 +21,7 @@ class User(db.Model):
     def __init__(self,name):
         self.name = name
         
+   
         
 with app.app_context():
     db.create_all()   
@@ -35,6 +37,9 @@ def home(num):
     print(data.pages)
     
     return render_template("home.html",data = data)
+
+
+
 
 @app.route("/signin")
 def signin(): 

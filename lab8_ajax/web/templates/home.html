@@ -40,8 +40,10 @@
             
             $(document).on('submit','#formid', function(e){
                 e.preventDefault();
+
                 let user = $('#userid').val();
                 let password = $('#passwordid').val();
+                
                 $.ajax({
                     type : 'POST',
                     url : '/home/',

@@ -6,10 +6,10 @@ from flask_login import LoginManager, UserMixin, login_user, login_required, log
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your_secret_key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site3'
+
 app.secret_key = "12345"
+
 db = SQLAlchemy(app)
-
-
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -18,6 +18,8 @@ class User(db.Model, UserMixin):
 
     def __repr__(self):
         return f'<User {self.username}>'
+    
+    
     
 with app.app_context():
         db.create_all()
@@ -76,7 +78,9 @@ def login():
             return redirect(url_for('login'))
         
         login_user(user)
-        flash("hahaha")
+        
+        
+        flash("successfully loged in")
         
         return redirect(url_for('dashboard'))
     return render_template('login.html')
@@ -87,6 +91,7 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for('home'))
+
 
 @app.route('/dashboard')
 @login_required

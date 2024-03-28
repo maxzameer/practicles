@@ -1,4 +1,5 @@
 from flask import Flask,jsonify,request
+
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -74,8 +75,11 @@ def create():
 @app.route("/read/<name>" ,methods = ['Get'])
 def read(name):    
     student = Student.query.filter_by(name = name).first()
+    if not student:
+        return jsonify({"error": "Student not found"}), 404
+    
     print(student)
-    return jsonify(student.to_json())
+    return jsonify(student.to_json()) 
 
 
 @app.route("/update/<name>", methods=['PUT'])

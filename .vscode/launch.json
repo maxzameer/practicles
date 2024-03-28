@@ -8,7 +8,7 @@
             "name": "Python Debugger: Django",
             "type": "debugpy",
             "request": "launch",
-            "program": "${workspaceFolder}\\ajax\\thor\\manage.py",
+            "program": "${workspaceFolder}\\lab8_ajax\\manage.py",
             "args": [
                 "runserver",
                 "9000"

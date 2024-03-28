@@ -11,7 +11,7 @@ app.config['MAIL_USERNAME'] = 'yourId@gmail.com'
 app.config['MAIL_PASSWORD'] = '*****'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
-mail = Mail(app) 
+
  
 @app.route("/") 
 def home(): 
