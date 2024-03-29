@@ -1,6 +1,6 @@
 from flask import Flask,jsonify,request
 # pip install pymongo
-#  
+
 import pymongo
 
 
@@ -8,11 +8,7 @@ app = Flask(__name__)
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["School"]  # Choose or create database
-collection = db["students"]  # Choose  or create collection
-
-
-
-        
+collection = db["students"]  # Choose  or create collection     
         
     
     
@@ -50,7 +46,9 @@ def create():
     subject = data.get('subject')
     
     data = {"name": name, "roll": roll, "subject": subject}
+    
     collection.insert_one(data)
+    
     return jsonify({"message": "Student added successfully"}), 200
 
 
